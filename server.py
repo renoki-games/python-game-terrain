@@ -9,7 +9,7 @@ from fastapi.responses import Response
 app = FastAPI()
 
 @app.get("/{width}/{height}/{scale}/{tile_size}")
-def read_root(
+def display_image(
     width: int,
     height: int,
     lacunarity: float = 3.0,

@@ -10,13 +10,13 @@ Forked from [jpw1991/perlin-noise-2d-terrain-generation](https://github.com/jpw1
 $ pip install -r requirements.txt
 ```
 
-To run the server in production, run:
+To run the server in production:
 
 ```bash
 $ uvicorn server:app
 ```
 
-To run the server in development, run:
+To run the server in development:
 
 ```bash
 $ uvicorn server:app --reload

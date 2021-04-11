@@ -22,6 +22,9 @@ def register_parsers():
     parser.add_argument('-ox', '--x_offset', help="X-range offset.", type=float, default=0.0)
     parser.add_argument('-oy', '--y_offset', help="Y-range offset.", type=float, default=0.0)
 
+    parser.add_argument('-box', '--x_offset', help="Base X-range offset.", type=float, default=0.0)
+    parser.add_argument('-boy', '--y_offset', help="Base Y-range offset.", type=float, default=0.0)
+
     parser.add_argument('-ts', '--tilesize', help="Size in pixels of tiles on the map.", type=int, default=4)
     parser.add_argument('-m', '--minify', help="Minify the JSON output.", type=bool, default=False)
     parser.add_argument('-f', '--file', help="Give a name to the output files.", type=str, default=None)
@@ -62,7 +65,9 @@ def main():
         persistence=args.persistence,
         lacunarity=args.lacunarity,
         x_offset=x_offset,
-        y_offset=y_offset
+        y_offset=y_offset,
+        base_x_offset=base_x_offset,
+        base_y_offset=base_y_offset,
     )
 
     moisture_map = MoistureMap(
@@ -74,7 +79,9 @@ def main():
         persistence=args.persistence,
         lacunarity=args.lacunarity,
         x_offset=x_offset,
-        y_offset=y_offset
+        y_offset=y_offset,
+        base_x_offset=base_x_offset,
+        base_y_offset=base_y_offset,
     )
 
     height_map.moisturize(moisture_map)

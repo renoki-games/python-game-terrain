@@ -18,6 +18,8 @@ def read_root(
     scale: float = 200,
     x_offset: float = 0.0,
     y_offset: float = 0.0,
+    base_x_offset: float = 0.0,
+    base_y_offset: float = 0.0,
     tile_size: int = 4,
     waterLevel: float = -0.72,
     shoreLevel: float = -0.44,
@@ -45,7 +47,9 @@ def read_root(
         persistence=persistence,
         lacunarity=lacunarity,
         x_offset=x_offset,
-        y_offset=y_offset
+        y_offset=y_offset,
+        base_x_offset=base_x_offset,
+        base_y_offset=base_y_offset,
     )
 
     moisture_map = MoistureMap(
@@ -57,7 +61,9 @@ def read_root(
         persistence=persistence,
         lacunarity=lacunarity,
         x_offset=x_offset,
-        y_offset=y_offset
+        y_offset=y_offset,
+        base_x_offset=base_x_offset,
+        base_y_offset=base_y_offset,
     )
 
     height_map.moisturize(moisture_map)

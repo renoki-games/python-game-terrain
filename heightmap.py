@@ -17,7 +17,9 @@ class HeightMap:
         persistence=0.5,
         lacunarity=2.0,
         x_offset=0.0,
-        y_offset=0.0
+        y_offset=0.0,
+        base_x_offset=0.0,
+        base_y_offset=0.0,
     ):
         self.width = width
         self.height = height
@@ -28,6 +30,8 @@ class HeightMap:
         self.lacunarity = lacunarity
         self.x_offset = x_offset
         self.y_offset = y_offset
+        self.base_x_offset = base_x_offset
+        self.base_y_offset = base_y_offset
 
         self.tiles = []
         self.image = None
@@ -56,8 +60,8 @@ class HeightMap:
         for y in range(self.height):
             for x in range(self.width):
                 noise_value = snoise2(
-                    x=(x/self.scale) + self.x_offset,
-                    y=(y/self.scale) + self.y_offset,
+                    x=(x/self.scale) + self.x_offset + self.base_x_offset,
+                    y=(y/self.scale) + self.y_offset + self.base_y_offset,
                     octaves=self.octaves,
                     persistence=self.persistence,
                     lacunarity=self.lacunarity
@@ -121,10 +125,16 @@ class HeightMap:
         yield 'octaves', self.octaves
         yield 'noise_ranges', [dict(noise_range) for noise_range in self.noise_ranges]
 
-        yield 'offsets', [{
-            "x": self.x_offset,
-            "y": self.y_offset,
-        }]
+        yield 'offsets', {
+            "current": {
+                "x": self.x_offset,
+                "y": self.y_offset,
+            },
+            "base": {
+                "x": self.base_x_offset,
+                "y": self.base_y_offset,
+            },
+        }
 
         yield 'biomes', {biome.name: {
             "name": biome.name,

@@ -1,8 +1,10 @@
-# Game Terrain
+Game Terrain
+============
+
+![Docker](https://github.com/renoki-games/python-game-terrain/workflows/Docker/badge.svg?branch=master)
+![Docker Pulls](https://img.shields.io/docker/pulls/renokigames/python-game-terrain)
 
 Generate Simplex-based procedural game terrain using Python.
-
-Forked from [jpw1991/perlin-noise-2d-terrain-generation](https://github.com/jpw1991/perlin-noise-2d-terrain-generation)
 
 ## 🚀 Installation
 

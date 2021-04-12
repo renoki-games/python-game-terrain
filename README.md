@@ -78,9 +78,9 @@ For a full list of query parameters, you can check `server.py`'s `display_image`
 
 The following Python versions are deployed on an day-to-day basis:
 
+- `3.7`
 - `3.8`
 - `3.9`
-- `3.10-rc`
 
 ## Versioning
 

@@ -6,22 +6,22 @@ Game Terrain
 
 Generate Simplex-based procedural game terrain using Python.
 
+- [Game Terrain](#game-terrain)
+  - [🚀 Installation](#-installation)
+  - [🙌 Usage](#-usage)
+    - [🖥 CLI](#-cli)
+  - [🔗 HTTP REST API](#-http-rest-api)
+  - [🐳 Docker](#-docker)
+    - [Supported Python Versions](#supported-python-versions)
+    - [Versioning](#versioning)
+      - [Version Specific Tags](#version-specific-tags)
+      - [Majors and Minor versions](#majors-and-minor-versions)
+      - [Latest Tags](#latest-tags)
+
 ## 🚀 Installation
 
 ```bash
 $ pip install -r requirements.txt
-```
-
-To run the server in production:
-
-```bash
-$ uvicorn server:app
-```
-
-To run the server in development:
-
-```bash
-$ uvicorn server:app --reload
 ```
 
 ## 🙌 Usage
@@ -54,6 +54,18 @@ $ python . --help
 
 ## 🔗 HTTP REST API
 
+To run the server in production:
+
+```bash
+$ uvicorn server:app
+```
+
+To run the server in development:
+
+```bash
+$ uvicorn server:app --reload
+```
+
 Making calls to the following URL will expose the generated image:
 
 ```
@@ -84,7 +96,7 @@ The following Python versions are deployed on an day-to-day basis:
 - `3.8`
 - `3.9`
 
-## Versioning
+### Versioning
 
 The project builds support multiple Python versions for each Github tag. The format for container tags is the following:
 
@@ -98,7 +110,7 @@ For example, this is going to be the latest tag for Python `3.9`:
 renokigames/python-game-terrain:3.9-latest
 ```
 
-### Version Specific Tags
+#### Version Specific Tags
 
 For version-specific tags, you might use the following image and tag, `1.0.0` being the repo tag:
 
@@ -106,7 +118,7 @@ For version-specific tags, you might use the following image and tag, `1.0.0` be
 renokigames/python-game-terrain:3.9-1.0.0
 ```
 
-### Python Majors and Minor versions
+#### Majors and Minor versions
 
 You can also specify major repo versions, where `1.0` means `1.0.x`:
 
@@ -120,7 +132,7 @@ You can also specify major.minor repo versions, where `1` means `1.x` (all 1.x v
 renokigames/python-game-terrain:3.9-1
 ```
 
-### Latest Tags
+#### Latest Tags
 
 For latest tags, use `latest` instead any other version:
 

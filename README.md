@@ -22,6 +22,36 @@ To run the server in development:
 $ uvicorn server:app --reload
 ```
 
+# 🙌 Usage
+
+## CLI
+
+To generate terrain with the CLI, simply run:
+
+```bash
+$ python . --file=map
+```
+
+You will then see the image that is going to be saved and you will be asked to save it:
+
+```bash
+$ python . --file=map
+Save map? [y/N]:
+```
+
+This will create the following files:
+
+- `maps/map.json` - metadata for the image containing biomes and tiles
+- `maps/map.png` - the rendered map
+
+To see the rest of the parameters, run:
+
+```bash
+$ python . --help
+```
+
+## HTTP
+
 Making calls to the following URL will expose the generated image:
 
 ```

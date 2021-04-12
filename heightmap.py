@@ -50,7 +50,6 @@ class HeightMap:
             moisture_tile = moisture_map.tiles[tile_index]
 
             self.tiles[tile_index].moisture_noise_value = moisture_tile.noise_value
-            self.tiles[tile_index].biome = self.biome.get_biome(tile.noise_value, moisture_tile.noise_value)
             self.tiles[tile_index].biome_name = self.biome.get_biome_name(tile.noise_value, moisture_tile.noise_value)
 
     def generate(self):
@@ -97,15 +96,17 @@ class HeightMap:
             ], fill=biome_color)
 
     def show_image(self):
-        self.image.show()
+        if self.get_image() is not None:
+            self.get_image().show()
 
     def save_image(self, file_name):
-        if self.image is not None:
-            self.image.save(file_name + ".png")
+        if self.get_image() is not None:
+            self.get_image().save(file_name + ".png")
 
     def save_json(self, file_name, indent=None):
         with open(file_name + ".json", 'w', encoding='utf8') as file:
-            json.dump(dict(self), file, indent=indent)
+            print(self.get_json())
+            json.dump(self.get_json(), file, indent=indent)
             file.close()
 
     def get_json(self):

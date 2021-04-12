@@ -80,7 +80,7 @@ The following Python versions are deployed on an day-to-day basis:
 
 - `3.8`
 - `3.9`
-- `3.10`
+- `3.10-rc`
 
 ## Versioning
 

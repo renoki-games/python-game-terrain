@@ -4,7 +4,7 @@ Generate Simplex-based procedural game terrain using Python.
 
 Forked from [jpw1991/perlin-noise-2d-terrain-generation](https://github.com/jpw1991/perlin-noise-2d-terrain-generation)
 
-# 🚀 Installation
+## 🚀 Installation
 
 ```bash
 $ pip install -r requirements.txt
@@ -22,9 +22,9 @@ To run the server in development:
 $ uvicorn server:app --reload
 ```
 
-# 🙌 Usage
+## 🙌 Usage
 
-## CLI
+### 🖥 CLI
 
 To generate terrain with the CLI, simply run:
 
@@ -50,7 +50,7 @@ To see the rest of the parameters, run:
 $ python . --help
 ```
 
-## HTTP
+## 🔗 HTTP REST API
 
 Making calls to the following URL will expose the generated image:
 
@@ -71,3 +71,57 @@ http://127.0.0.1:8000/100/100/20/10?json=1
 ```
 
 For a full list of query parameters, you can check `server.py`'s `display_image` method parameters.
+
+## 🐳 Docker
+
+### Supported Python Versions
+
+The following Python versions are deployed on an day-to-day basis:
+
+- `3.8`
+- `3.9`
+- `3.10`
+
+## Versioning
+
+The project builds support multiple Python versions for each Github tag. The format for container tags is the following:
+
+```
+renokigames/python-game-terrain:[pyton_version]-[repo_tag]
+```
+
+For example, this is going to be the latest tag for Python `3.9`:
+
+```
+renokigames/python-game-terrain:3.9-latest
+```
+
+### Version Specific Tags
+
+For version-specific tags, you might use the following image and tag, `1.0.0` being the repo tag:
+
+```
+renokigames/python-game-terrain:3.9-1.0.0
+```
+
+### Python Majors and Minor versions
+
+You can also specify major repo versions, where `1.0` means `1.0.x`:
+
+```
+renokigames/python-game-terrain:3.9-1.0
+```
+
+You can also specify major.minor repo versions, where `1` means `1.x` (all 1.x versions):
+
+```
+renokigames/python-game-terrain:3.9-1
+```
+
+### Latest Tags
+
+For latest tags, use `latest` instead any other version:
+
+```
+renokigames/python-game-terrain:3.9-latest
+```

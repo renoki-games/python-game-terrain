@@ -8,6 +8,16 @@ from heightmap import HeightMap
 from moisturemap import MoistureMap
 from noiserange import NoiseRange
 
+def str2bool(v):
+    if isinstance(v, bool):
+       return v
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
+
 def register_parsers():
     parser = argparse.ArgumentParser(description='Generate a Height Map using Procedural noise.')
 
@@ -26,7 +36,7 @@ def register_parsers():
     parser.add_argument('-boy', '--base_y_offset', help="Base Y-range offset.", type=float, default=0.0)
 
     parser.add_argument('-ts', '--tilesize', help="Size in pixels of tiles on the map.", type=int, default=4)
-    parser.add_argument('-m', '--minify', help="Minify the JSON output.", type=bool, default=False)
+    parser.add_argument('-m', '--minify', help="Minify the JSON output.", type=str2bool, const=True, nargs='?', default=False)
     parser.add_argument('-f', '--file', help="Give a name to the output files.", type=str, default=None)
 
     parser.add_argument('--water', help="Height level of the water.", type=float, default=-0.72)
@@ -36,7 +46,8 @@ def register_parsers():
     parser.add_argument('--mountain', help="Height of mountains.", type=float, default=0.44)
     parser.add_argument('--peak', help="Height of huge mountains.", type=float, default=0.72)
 
-    parser.add_argument('-r', '--random', help="Generate random offsets.", type=bool, default=False)
+    parser.add_argument('-r', '--random', help="Generate random offsets.", type=str2bool, const=True, nargs='?', default=False)
+    parser.add_argument('-save', '--save', help="Jump over the y/N saving question.", type=str2bool, const=True, nargs='?', default=False)
 
     return parser
 
@@ -88,9 +99,10 @@ def main():
 
     height_map.draw_image(args.tilesize)
 
-    height_map.show_image()
+    if not args.save:
+        height_map.show_image()
 
-    if click.confirm('Save map?', default=False):
+    if args.save or click.confirm('Save map?', default=False):
         file_name = 'maps/' + args.file
 
         height_map.save(

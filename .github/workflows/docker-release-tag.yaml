@@ -1,4 +1,4 @@
-name: Docker
+name: Docker Release
 
 on:
   push:
@@ -28,10 +28,10 @@ jobs:
         uses: crazy-max/ghaction-docker-meta@v2.3.0
         with:
           images: renokigames/python-game-terrain
-          tag-semver: |
-            ${{ matrix.python }}-{{version}}
-            ${{ matrix.python }}-{{major}}
-            ${{ matrix.python }}-{{major}}.{{minor}}
+          tags: |
+            type=semver,pattern=${{ matrix.python }}-{{version}}
+            type=semver,pattern=${{ matrix.python }}-{{major}}
+            type=semver,pattern=${{ matrix.python }}-{{major}}.{{minor}}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1

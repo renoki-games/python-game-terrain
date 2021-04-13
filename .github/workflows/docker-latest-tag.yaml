@@ -1,4 +1,4 @@
-name: Docker
+name: Docker Latest
 
 on:
   push:
@@ -23,14 +23,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Docker meta
-        id: docker_meta
-        uses: crazy-max/ghaction-docker-meta@v2.3.0
-        with:
-          images: renokigames/python-game-terrain
-          tag-semver: |
-            ${{ matrix.python }}-latest
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
@@ -49,7 +41,6 @@ jobs:
         with:
           push: true
           context: .
-          tags: ${{ steps.docker_meta.outputs.tags }}
-          labels: ${{ steps.docker_meta.outputs.labels }}
+          tags: renokigames/python-game-terrain:${{ matrix.python }}-latest
           build-args: |
             PYTHON_VERSION=${{ matrix.python }}

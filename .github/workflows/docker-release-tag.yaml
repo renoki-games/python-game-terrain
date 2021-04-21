@@ -14,9 +14,9 @@ jobs:
     strategy:
       matrix:
         python:
-          - "3.7"
-          - "3.8"
-          - "3.9"
+          - 3.7-alpine
+          - 3.8-alpine
+          - 3.9-alpine
 
     name: Tag Release for Python ${{ matrix.python }}
 

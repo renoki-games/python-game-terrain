@@ -6,8 +6,12 @@ COPY . /usr/src/app
 
 WORKDIR /usr/src/app
 
-RUN pip install -U setuptools pip && \
+RUN apk upgrade --update && \
+    apk add --no-cache --update build-base && \
+    pip install -U setuptools pip && \
     pip install --no-cache-dir -r requirements.txt && \
-    rm -rf .git/ .github/ *.md
+    rm -rf .git/ .github/ *.md && \
+    apk del build-base && \
+    rm -rf /var/cache/apk/*
 
 CMD ["uvicorn", "server:app"]

@@ -1,7 +1,7 @@
 Game Terrain
 ============
 
-![Docker](https://github.com/renoki-games/python-game-terrain/workflows/Docker/badge.svg?branch=master)
+![Docker Release](https://github.com/renoki-games/python-game-terrain/workflows/Docker%20Release/badge.svg?branch=master)
 ![Docker Pulls](https://img.shields.io/docker/pulls/renokigames/python-game-terrain)
 
 Generate Simplex-based procedural game terrain using Python.

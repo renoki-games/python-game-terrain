@@ -1,16 +1,18 @@
 Game Terrain
 ============
 
+![](map.png)
+
 ![Docker Release](https://github.com/renoki-games/python-game-terrain/workflows/Docker%20Release/badge.svg?branch=master)
 ![Docker Pulls](https://img.shields.io/docker/pulls/renokigames/python-game-terrain)
 
-Generate Simplex-based procedural game terrain using Python.
+Generate Simplex-based procedural game terrain, via CLI or via REST API, using Python.
 
 - [Game Terrain](#game-terrain)
   - [🚀 Installation](#-installation)
   - [🙌 Usage](#-usage)
     - [🖥 CLI](#-cli)
-  - [🔗 HTTP REST API](#-http-rest-api)
+    - [🔗 HTTP REST API](#-http-rest-api)
   - [🐳 Docker](#-docker)
     - [Supported Python Versions](#supported-python-versions)
     - [Versioning](#versioning)
@@ -52,7 +54,7 @@ To see the rest of the parameters, run:
 $ python . --help
 ```
 
-## 🔗 HTTP REST API
+### 🔗 HTTP REST API
 
 To run the server in production:
 

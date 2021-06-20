@@ -7,7 +7,7 @@ COPY . /usr/src/app
 WORKDIR /usr/src/app
 
 RUN apk upgrade --update && \
-    apk add --virtual build-dependencies build-base gcc wget git && \
+    apk add --virtual build-dependencies build-base gcc wget git zlib && \
     python3 -m ensurepip && \
     pip3 install --no-cache --upgrade pip setuptools && \
     pip3 install --no-cache-dir -r requirements.txt && \

@@ -10,7 +10,7 @@ RUN apk upgrade --update && \
     apk add --virtual build-dependencies build-base gcc wget git zlib && \
     python3 -m ensurepip && \
     pip3 install --no-cache --upgrade pip setuptools && \
-    python3 -m pip3 install -U --force-reinstall pip3 && \
+    python3 -m pip3 install -U --force-reinstall pip && \
     pip3 install --no-cache-dir -r requirements.txt && \
     rm -rf .git/ .github/ *.md && \
     apk --purge del build-dependencies && \

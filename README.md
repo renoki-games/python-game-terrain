@@ -10,6 +10,7 @@ Generate Simplex-based procedural game terrain, via CLI or via REST API, using P
 
 - [Game Terrain](#game-terrain)
   - [🚀 Installation](#-installation)
+  - [🤝 Supporting](#-supporting)
   - [🙌 Usage](#-usage)
     - [🖥 CLI](#-cli)
     - [🔗 HTTP REST API](#-http-rest-api)
@@ -19,6 +20,12 @@ Generate Simplex-based procedural game terrain, via CLI or via REST API, using P
       - [Version Specific Tags](#version-specific-tags)
       - [Majors and Minor versions](#majors-and-minor-versions)
       - [Latest Tags](#latest-tags)
+
+## 🤝 Supporting
+
+If you are using your application in your day-to-day job (in production), on presentation demos, hobby projects, or even school projects, spread some kind words about our work or sponsor our work via KoFi. 📦
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R42U8CL)
 
 ## 🚀 Installation
 

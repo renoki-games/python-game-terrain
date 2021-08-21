@@ -4,7 +4,6 @@ Game Terrain
 ![](map.png)
 
 ![Docker Release](https://github.com/renoki-games/python-game-terrain/workflows/Docker%20Release/badge.svg?branch=master)
-![Docker Pulls](https://img.shields.io/docker/pulls/renokigames/python-game-terrain)
 
 Generate Simplex-based procedural game terrain, via CLI or via REST API, using Python.
 
@@ -103,13 +102,13 @@ The following Python versions are deployed on an day-to-day basis:
 The project builds support multiple Python versions for each Github tag. The format for container tags is the following:
 
 ```
-renokigames/python-game-terrain:[pyton_version]-[repo_tag]
+quay.io/renokigames/python-game-terrain:[pyton_version]-[repo_tag]
 ```
 
 For example, this is going to be the latest tag for Python `3.9`:
 
 ```
-renokigames/python-game-terrain:3.9-latest
+quay.io/renokigames/python-game-terrain:3.9-latest
 ```
 
 #### Version Specific Tags
@@ -117,7 +116,7 @@ renokigames/python-game-terrain:3.9-latest
 For version-specific tags, you might use the following image and tag, `1.0.0` being the repo tag:
 
 ```
-renokigames/python-game-terrain:3.9-1.0.0
+quay.io/renokigames/python-game-terrain:3.9-1.0.0
 ```
 
 #### Majors and Minor versions
@@ -125,13 +124,13 @@ renokigames/python-game-terrain:3.9-1.0.0
 You can also specify major repo versions, where `1.0` means `1.0.x`:
 
 ```
-renokigames/python-game-terrain:3.9-1.0
+quay.io/renokigames/python-game-terrain:3.9-1.0
 ```
 
 You can also specify major.minor repo versions, where `1` means `1.x` (all 1.x versions):
 
 ```
-renokigames/python-game-terrain:3.9-1
+quay.io/renokigames/python-game-terrain:3.9-1
 ```
 
 #### Latest Tags
@@ -139,5 +138,5 @@ renokigames/python-game-terrain:3.9-1
 For latest tags, use `latest` instead any other version:
 
 ```
-renokigames/python-game-terrain:3.9-latest
+quay.io/renokigames/python-game-terrain:3.9-latest
 ```

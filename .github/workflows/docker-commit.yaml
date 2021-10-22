@@ -45,5 +45,6 @@ jobs:
         with:
           push: true
           tags: quay.io/renokigames/python-game-terrain:${{ matrix.python }}-${{ github.sha }}
+          context: .
           build-args: |
             PYTHON_VERSION=${{ matrix.python }}

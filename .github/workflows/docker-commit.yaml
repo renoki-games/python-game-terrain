@@ -41,7 +41,7 @@ jobs:
 
       - name: Build and push
         id: docker
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v4
         with:
           push: true
           tags: quay.io/renokigames/python-game-terrain:${{ matrix.python }}-${{ github.sha }}
